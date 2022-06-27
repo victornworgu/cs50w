@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="advanced_search.css">
+		<title>Google Advanced Search</title>
+	</head>
+	<body>
+		<div class="div_link_container">
+				<div class="div_link_image">
+					<a href="index.html"><img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Go to Google Home"></a>
+				</div>
+				<div class="div_link_normal">
+					<a class="link_normal" href="index.html">Google Home</a>
+				</div>
+		</div>
+		<div class="div_header">
+			<label>Advanced Search</label>
+		</div>
+		<div class="div_divider"></div>
+		<div class="div_table">
+			<form action="https://www.google.com/search" method="get">
+				<div class="row">
+					<div class="cell div_labelhead">Find pages with...</div>
+					<div class="div_textboxhead"></div>
+					<div class="cell div_tiphead">To do this in the search box</div>
+				</div>
+				<div class="row">
+					<div class="cell div_label"><label for="1">all these words:</label></div>
+					<div class="cell div_textbox"><input type="text" class="textbox" name="as_q" id="1" value="" autofocus="autofocus"></div>
+					<div class="cell div_tip">Type the important words: tri-colour rat terrier</div>
+				</div>
+				<div class="row">
+					<div class="cell div_label"><label for="2">this exact word or phrase:</label></div>
+					<div class="cell div_textbox"><input type="text" class="textbox" name="as_epq" id="2" value=""></div>
+					<div class="cell div_tip">Put exact words in quotes: "rat terrier"</div>
+				</div>
+				<div class="row">
+					<div class="cell div_label"><label for="3">all these words:</label></div>
+					<div class="cell div_textbox"><input type="text" class="textbox" name="as_oq" id="3" value=""></div>
+					<div class="cell div_tip">Type OR between all the words you want: miniature OR standard</div>
+				</div>
+				<div class="row">
+					<div class="cell div_label"><label for="4">all these words:</label></div>
+					<div class="cell div_textbox"><input type="text" class="textbox" name="as_eq" id="4" value=""></div>
+					<div class="cell div_tip">Put a minus sign just before words that you don't want: -rodent, -"Jack Russell"</div>
+				</div>
+				<div class="row">
+					<div class="cell div_label"></div>
+					<div class="cell div_button"><input class="button" value="Advanced Search" type="submit"></div>
+					<div class="cell div_tip"></div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

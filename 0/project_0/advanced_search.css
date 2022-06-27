@@ -1,0 +1,112 @@
+body {
+	font-family: arial,sans-serif;
+}
+.div_link_container {
+	display: inline-block;
+	width: 100vw;
+
+}
+	.div_link_image {
+	padding: 16px;
+		float: left;
+	}
+	.div_link_normal {
+	float: right;
+	}
+	.link_normal {
+	padding: 20px;
+	color: #4d4d4d;
+	text-align: right;
+	text-decoration: none;
+	font-size: 13px;
+	}
+	.link_normal:hover {
+	text-decoration: underline;
+	}
+.div_header {
+	font-size: 20px;
+	color: #d93025;
+	padding: 20px 35px;
+}
+.div_divider {
+	border-bottom: 1px solid #ebebeb;
+}
+.div_table {
+	display: block;
+	text-align: left;
+	margin: 20px;
+}
+	.row {
+		display: table-row;
+	}
+	.cell {
+		display: table-cell;
+		padding: 5px 10px 5px 10px;
+		white-space: nowrap;
+	}
+	.div_labelhead {
+		font-size: 16px;
+		font-weight: 500;
+		color: #333;
+	}
+	.div_tiphead {
+		font-weight: 700;
+		font-size: 13px;
+		color: #777;
+	}
+	.div_label {
+		font-size: 13px;
+		color: #222;
+	}
+	.div_textbox {
+		width: 100%;
+
+	}
+		.textbox {
+			height: 21px;
+			min-width: 100%;
+			max-width: auto;
+			border-top: 2px solid #c0c0c0;
+			border: 1px solid #d9d9d9;
+
+		}
+		.textbox:focus {
+			box-shadow:inset 0 1px 2px rgba(0,0,0,.3);
+			border:1px solid #4d90fe;
+			outline:none
+		}
+	.div_tip {
+		font-size: 11px;
+		color: #555;
+	}
+	.div_button {
+		text-align: right;
+		padding-right: 2px;
+	}
+		.button {
+			text-align: center;
+			text-decoration: none;
+			font-size: 11px;
+			font-weight: bold;
+			background-color: #4d90fe;
+			color: white;
+			border: none;
+			padding: 7px 12px;
+		}
+		.button:hover {
+			background-color: #3079ed;
+		}
+		.button:focus{
+			outline: 1px solid #3079ed;
+			border: 1px solid white;
+		}
+@media (min-width: 1000px) {
+	.div_tiphead, .div_tip {
+			 visibility: visible;
+		}
+}
+@media (max-width: 999px) {
+	.div_tiphead, .div_tip {
+			visibility: hidden;
+	 }
+}
