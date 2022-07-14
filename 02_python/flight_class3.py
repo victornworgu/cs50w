@@ -21,4 +21,4 @@ for p in range(flight.capacity+1):
 	if flight.add_passenger(nom):
 		print(f"{flight.passengers[p]} has been booked successfully")
 		#print(f"{p} {flight.passengers[p]} {flight.passengers}")
-print(f"Sorry, flight full booked. No available seat for {nom}")
+print(f"Sorry, flight fully booked. No available seat for {nom}")
