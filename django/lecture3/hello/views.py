@@ -8,3 +8,11 @@ def index(request):
 
 def victor(request):
 	return HttpResponse("Hello, Vctor!")
+
+def multiply(request):
+	a = 3
+	b = 3
+	c = a * b
+	return HttpResponse(
+	f"{a} x {b} = {c}"
+	)
