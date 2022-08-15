@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 
 class NewTaskForm(forms.Form):
-	task = forms.CharField(label="New Task")
+	task = forms.CharField(label="New Task", widget=forms.TextInput(attrs={'autofocus': ''}))
 
 """
 tasks = ["foo", "bar", "baz"]
