@@ -24,6 +24,12 @@ def view_entry(request, title):
 	else:
 		return render(request, "encyclopedia/entry.html", {"error": "404: The requested page does not exist", "title": "404: Not Found"})
 
+def edit(request, title):
+	form = NewWikiForm()
+	form.content = util.get_entry(title)
+	if title in util.list_entries():
+		return render(request, "encyclopedia/edit.html", {"entry": util.get_entry(title), "form": form, "title": title})
+
 def search(request):
 	query = request.POST.get("q")
 	entries = util.list_entries()
