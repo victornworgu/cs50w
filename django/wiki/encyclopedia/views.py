@@ -47,7 +47,7 @@ def search(request):
 	query = request.POST.get("q")
 	entries = util.list_entries()
 	if query in entries:
-		return render(request, "encyclopedia/entry.html", {"entry": util.get_entry(query), "title": query})
+		return redirect('viewentry', title=query)
 	else:
 		if query and query.strip():
 			filtered = [x for x in entries if query in x]
