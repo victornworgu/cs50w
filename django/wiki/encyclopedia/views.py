@@ -25,10 +25,23 @@ def view_entry(request, title):
 		return render(request, "encyclopedia/entry.html", {"error": "404: The requested page does not exist", "title": "404: Not Found"})
 
 def edit(request, title):
-	form = NewWikiForm()
-	form.content = util.get_entry(title)
+	form_data = {"title": title, "content": util.get_entry(title)}
+	form = NewWikiForm(form_data)
+	if request.method == "POST":
+		edited_wiki = NewWikiForm(request.POST)
+		if edited_wiki.is_valid():
+			title = edited_wiki.cleaned_data.get('title')
+			content = edited_wiki.cleaned_data.get('content')
+
+			if title in util.list_entries() and content == util.get_entry(title):
+				return render(request, "encyclopedia/edit.html", {"form": form, "title": title, "error": "<span style='padding: 10px; border-radius: 30px; border: 1px solid green; color: green; margin-right: 20px;'>You made no changes made to this wiki entry. Return <a href='/'>Home</a> if you don't wish to edit this entry</span>"})
+			else:
+				util.save_entry(title, content)
+				return redirect('viewentry', title=title)
+
+
 	if title in util.list_entries():
-		return render(request, "encyclopedia/edit.html", {"entry": util.get_entry(title), "form": form, "title": title})
+		return render(request, "encyclopedia/edit.html", {"form": form, "title": title})
 
 def search(request):
 	query = request.POST.get("q")
@@ -47,12 +60,12 @@ def search(request):
 
 def addnew(request):
 	if request.method == "POST":
-		form = NewWikiForm(request.POST)
-		if form.is_valid():
-			title = form.cleaned_data.get('title')
-			content = form.cleaned_data.get('content')
+		new_wiki = NewWikiForm(request.POST)
+		if new_wiki.is_valid():
+			title = new_wiki.cleaned_data.get('title')
+			content = new_wiki.cleaned_data.get('content')
 			if title in util.list_entries():
-				return render(request, "encyclopedia/addnew.html", {"form": form, "error": 'A wiki entry with this title already exists'})
+				return render(request, "encyclopedia/addnew.html", {"form": new_wiki.cleaned_data, "error": 'A wiki entry with this title already exists'})
 			else:
 				util.save_entry(title, content)
 				return redirect('viewentry', title=title)
