@@ -5,8 +5,12 @@
 {% endblock %}
 
 {% block body %}
-		{{ entry |safe }}<h4 style="color: red;">{{error}}</h4>
-		{% if entry %}
+		{{ entry |safe }}
+		{% if error %}
+			<h4>Page Not Found</h4>
+			<label class="error">{{error |safe}}</label>
+			<br><a href="{% url 'index' %}">Return Home</a>
+		{% else %}
 			<p> <a href="{% url 'edit' title=title %}">Edit</a>
 		{% endif %}
 {% endblock %}

@@ -19,6 +19,5 @@ print("///////////////////////WELCOME TO NVC AIRLINES//////////////////////////"
 for p in range(flight.capacity+1):
 	nom = (input("Enter Name of Passenger: "))
 	if flight.add_passenger(nom):
-		print(f"{flight.passengers[p]} has been booked successfully")
-		#print(f"{p} {flight.passengers[p]} {flight.passengers}")
+		print(f"{flight.passengers[p]} has been booked successfully")		
 print(f"Sorry, flight fully booked. No available seat for {nom}")

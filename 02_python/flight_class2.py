@@ -20,5 +20,4 @@ for p in range(flight.capacity):
 	nom = (input("Enter Name of Passenger: "))
 	if flight.add_passenger(nom):
 		print(f"{flight.passengers[p]} has been booked successfully.")
-		#print(f"{p} {flight.passengers[p]} {flight.passengers}")
 print(f"Booking for Flight 775 Closed. All {flight.capacity} seats has been booked.")

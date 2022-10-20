@@ -36,3 +36,14 @@ textarea {
 .sidebar h2 {
     margin-top: 5px;
 }
+
+.error {
+	font-weight: lighter;
+	padding: 10px;
+	border-radius: 30px;
+	border: 1px solid #e9ecef;
+	color: red; margin-right: 20px;
+}
+.query {
+	color: initial;
+}
