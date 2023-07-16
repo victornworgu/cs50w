@@ -4,19 +4,58 @@
 		<meta charset="utf-8">
 		<title>Screen Size</title>
 		<style>
+			.replaced span {
+				display: none;
+			}
+			@media (min-width: 1px) {
+				body {
+					 background-color: default;
+				}
+				.replaced:after {
+					content: "Screen width <= 599 px";
+
+				}
+			}
 			@media (min-width: 600px) {
+				body {
+					background-color: blue;
+				}
+				.replaced:after {
+					content: "Screen width >= 600 px";
+
+				}
+			}
+			@media (min-width: 960px) {
+				body {
+					background-color: green;
+				}
+				.replaced:after {
+					content: "Screen width >= 960 px";
+
+				}
+			}
+			@media (min-width: 1350px) {
 				body {
 					background-color: red;
 				}
+				.replaced:after {
+					content: "Screen width >= 1350 px";
+
+				}
 			}
-			@media (max-width: 599px) {
-				 body {
-					 background-color: blue;
-				 }
-			}
+			/*@media (max-width: 599px) {
+				body {
+					 background-color: default;
+				}
+				.replaced:after {
+					content: "Screen width <= 599 px";
+
+				}
+			}*/
 		</style>
 	</head>
 	<body>
 		<h1>This page varies background color according to width!</h1>
+		<p class="replaced"> <span>Screen size</span></p>
 	</body>
 </html>
